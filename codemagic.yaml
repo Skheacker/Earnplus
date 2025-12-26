@@ -1,0 +1,28 @@
+workflows:
+  android-workflow:
+    name: Android Workflow
+    max_build_duration: 60
+    environment:
+      flutter: stable
+      xcode: latest
+      vars:
+        # optional env vars
+        FLUTTER_CHANNEL: stable
+    scripts:
+      - name: Install dependencies
+        script: |
+          flutter pub get
+      - name: Run tests
+        script: |
+          flutter test || true
+      - name: Build APK
+        script: |
+          flutter build apk --release
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk
+    publishing:
+      email:
+        recipients:
+          - your-email@example.com
+        on_success: always
+        on_failure: always
