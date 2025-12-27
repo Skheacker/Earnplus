@@ -1,0 +1,33 @@
+name: coin_app
+description: A Flutter app with coin, withdraw, and ads
+publish_to: 'none' # Remove this line if you want to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.7.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Ads (Google Mobile Ads)
+  google_mobile_ads: ^2.4.0
+
+  # State management (optional)
+  provider: ^6.0.5
+
+  # HTTP requests (optional, if you call APIs)
+  http: ^1.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.1
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/  # अगर images use कर रहे हो
+    - assets/icons/   # अगर icons use कर रहे हो
